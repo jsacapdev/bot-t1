@@ -2,6 +2,7 @@
 import pandas as pd
 from feature_engineering import calculate_sma
 
+
 def predict_action_sma_crossover(df, fast_sma_period, slow_sma_period):
     if len(df) < max(fast_sma_period, slow_sma_period) + 1:
         return 0  # Not enough data to check for crossover
