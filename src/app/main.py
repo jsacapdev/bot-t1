@@ -6,13 +6,13 @@ from exchange_connector import ExchangeConnector
 from feature_engineering import engineer_features, create_target
 from model import TradingModel
 from sma_crossover_strategy import predict_action_sma_crossover
-from trading_executor import TradingExecutor  # Import the new class
+from trading_executor import BinanceTradingExecutor  # Updated import
 import pandas as pd
 
 def main():
     exchange_connector = ExchangeConnector(config['exchange'])
     bot_config = config
-    trading_executor = TradingExecutor(bot_config['symbol'])  # Instantiate the TradingExecutor
+    binance_trading_executor = BinanceTradingExecutor(bot_config['symbol'])  # Updated instantiation
 
     historical_data = exchange_connector.fetch_historical_data(
         bot_config['symbol'], bot_config['timeframe'], bot_config['limit']
@@ -49,14 +49,14 @@ def main():
                             ml_prediction = model.predict(latest_features.tail(1))
                             print(f"ML Prediction: {'BUY' if ml_prediction == 1 else 'SELL' if ml_prediction == -1 else 'HOLD'}")
                             if ml_prediction == 1:
-                                trading_executor.buy()
+                                binance_trading_executor.buy()  # Updated reference
                             elif ml_prediction == -1:
-                                trading_executor.sell()
+                                binance_trading_executor.sell() # Updated reference
                             else:
-                                trading_executor.hold()
+                                binance_trading_executor.hold() # Updated reference
                         else:
                             print("ML Prediction: Model not trained or not enough data for features.")
-                            trading_executor.hold() # Default to hold if no ML prediction
+                            binance_trading_executor.hold() # Updated reference
 
                         sma_prediction = predict_action_sma_crossover(
                             latest_data.copy(), bot_config['fast_sma_period'], bot_config['slow_sma_period']
@@ -65,10 +65,10 @@ def main():
 
                     else:
                         print(f"Waiting for {bot_config['slow_sma_period'] + 1} data points.")
-                        trading_executor.hold()
+                        binance_trading_executor.hold() # Updated reference
                 else:
                     print("Failed to fetch latest data.")
-                    trading_executor.hold()
+                    binance_trading_executor.hold() # Updated reference
 
                 time.sleep(60)
         else:
