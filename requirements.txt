@@ -1,0 +1,7 @@
+ccxt
+ipykernel
+jupyter
+matplotlib
+pandas
+python-binance
+scikit-learn
