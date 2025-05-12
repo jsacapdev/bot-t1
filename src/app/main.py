@@ -6,7 +6,7 @@ from exchange_connector import ExchangeConnector
 from feature_engineering import engineer_features, create_target
 from model import TradingModel
 from sma_crossover_strategy import predict_action_sma_crossover
-from trading_executor import BinanceTradingExecutor  # Updated import
+from binance_trading_executor import BinanceTradingExecutor  # Updated import
 import pandas as pd
 
 def main():

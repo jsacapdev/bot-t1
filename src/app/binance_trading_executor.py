@@ -1,4 +1,4 @@
-# trading_executor.py
+# binance_trading_executor.py
 
 class BinanceTradingExecutor:
     """
