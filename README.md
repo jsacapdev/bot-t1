@@ -3,9 +3,9 @@
 ``` bash
 conda
 
-conda create --name btt python=3.12
+conda create --name ccxt python=3.12
 
-conda activate btt
+conda activate ccxt
 
 pip install -r requirements.txt
 ```
