@@ -24,8 +24,7 @@ jobs:
     - name: Lint with Flake8
       run: |
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        exit-code=$?
-        if [[ $exit_code -ne 0 ]]; then
+        if [[ $? -ne 0 ]]; then
           echo "Flake8 found issues."
           exit 1
         fi
