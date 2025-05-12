@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/" # Check for dependencies in the root directory
+    schedule:
+      interval: "daily" # Check for updates daily (you can also use weekly, monthly)
+    open-pull-requests-limit: 10 # Limit the number of open PRs from Dependabot
+    ignore:
+      - dependency-name: "setuptools"
+      - dependency-name: "wheel"
+      - dependency-name: "pip"
