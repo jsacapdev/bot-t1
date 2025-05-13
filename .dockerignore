@@ -1,0 +1,5 @@
+.git
+__pycache__
+*.pyc
+*.log
+data/  # Or any directory where you store data that doesn't need to be in the image
