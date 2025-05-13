@@ -7,9 +7,15 @@
 ``` bash
 conda
 
-conda create --name bot-t1 python=3.12
+conda create --name bot-t1 python=3.13
 
 conda activate bot-t1
 
 pip install -r requirements.txt
+```
+
+``` bash
+docker build -t bot-t1 .
+
+docker run -d -e BINANCE_API_KEY="your_api_key" -e BINANCE_SECRET_KEY="your_secret_key" --rm bot-t1
 ```
