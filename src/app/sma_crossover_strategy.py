@@ -4,8 +4,12 @@ from feature_engineering import calculate_sma
 import logging
 import sys
 
-logging.basicConfig(stream=sys.stdout, level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    stream=sys.stdout,
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
 
 def predict_action_sma_crossover(df, fast_sma_period, slow_sma_period):
     logger = logging.getLogger(__name__)

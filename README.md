@@ -17,5 +17,10 @@ pip install -r requirements.txt
 ``` bash
 docker build -t bot-t1 .
 
-docker run -d -e BINANCE_API_KEY="your_api_key" -e BINANCE_SECRET_KEY="your_secret_key" --rm bot-t1
+docker run -d bot-t1
+
+docker run -d -e BINANCE_API_KEY="your_api_key" -e BINANCE_SECRET_KEY="your_secret_key" bot-t1
+
+docker logs -f 
+docker logs -t 
 ```

@@ -2,14 +2,19 @@
 import logging
 import sys
 
-logging.basicConfig(stream=sys.stdout, level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    stream=sys.stdout,
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
 
 class BinanceTradingExecutor:
     """
     A class to simulate submitting trades to the Binance trading platform.
     In a real application, this would handle API calls to Binance.
     """
+
     def __init__(self, symbol):
         """
         Initializes the BinanceTradingExecutor with the trading symbol.
