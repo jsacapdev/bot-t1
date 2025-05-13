@@ -25,10 +25,10 @@ def predict_action_sma_crossover(df, fast_sma_period, slow_sma_period):
 
     if previous_fast_sma is not None and previous_slow_sma is not None:
         if previous_fast_sma <= previous_slow_sma and fast_sma > slow_sma:
-            logger.info("SMA Crossover: BUY signal.")
+            # logger.info("SMA Crossover: BUY signal.")
             return 1  # BUY
         elif previous_fast_sma >= previous_slow_sma and fast_sma < slow_sma:
-            logger.info("SMA Crossover: SELL signal.")
+            # logger.info("SMA Crossover: SELL signal.")
             return -1  # SELL
-    logger.info("SMA Crossover: HOLD signal.")
+    # logger.info("SMA Crossover: HOLD signal.")
     return 0  # HOLD
