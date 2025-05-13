@@ -32,6 +32,8 @@ docker run -d -e BINANCE_API_KEY="your_api_key" -e BINANCE_SECRET_KEY="your_secr
 ``` bash
 docker pull ghcr.io/jsacapdev/bot-t1:main
 
+docker run -d ghcr.io/jsacapdev/bot-t1:main
+
 docker run -d -e BINANCE_API_KEY="your_api_key" -e BINANCE_SECRET_KEY="your_secret_key" ghcr.io/jsacapdev/bot-t1:main
 ```
 
